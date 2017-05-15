@@ -1,27 +1,37 @@
+local success, block = turtle.inspect()
 function turtle.blockname()
- local success, block = turtle.inspect()
+  success, block = turtle.inspect()
   if block.name == nil then
    return "nothing here"
   else
    return block.name
   end
- end
+end
  
-for i = 1,21 do
+function turtle.reeds()
+ for i = 1,21 do
+--  turtle.blockname()
  if turtle.blockname() == "minecraft:reeds" then
-  turtle.up()
-  turtle.up()
   turtle.dig()
   turtle.down()
   turtle.dig()
-  turtle.down()
-  turtle.dig()
+  turtle.up()
   turtle.forward()
+  end
  end
 end
  
-for i = 1,21 do
- turtle.select(1)
- turtle.back()
- turtle.place()
-end
+turtle.up()
+turtle.up()
+turtle.reeds()
+turtle.forward()
+turtle.turnRight()
+turtle.forward()
+turtle.turnRight()
+turtle.reeds()
+turtle.forward()
+turtle.turnRight()
+turtle.forward()
+turtle.down()
+turtle.turnRight()
+turtle.down()
