@@ -16,16 +16,10 @@ if turtle.blockname() == "minecraft:pumpkin" then
  turtle.digDown()
  turtle.digDown()
  turtle.forward()
-else if turtle.blockname() == "minecraft:pumpkin_stem" then
+elseif turtle.blockname() == "minecraft:pumpkin_stem" then
   turtle.forward()
-else if turtle,blockname() == "minecraft:dirt" then
+elseif turtle,blockname() == "minecraft:air" then
  turtle.digDown()
  turtle.forward()
-else if turtle.blockname() == "minecraft:grass" then
- turtle.digDown()
- turtle.forward()
- end
- end
- end
  end
 end
