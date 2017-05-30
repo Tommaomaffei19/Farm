@@ -1,0 +1,30 @@
+local success, block = turtle.inspectDown()
+function turtle.blockname()
+  success, block = turtle.inspectDown()
+  if block.name == nil then
+   return "nothing here"
+  else
+   return block.name
+  end
+end
+ 
+ turtle.up()
+ turtle.forward()
+ 
+for x = 1,21 do
+if turtle.blockname() == "minecraft:pumpkin" then
+ block.name = turtle.inspectDown()
+ turtle.digDown()
+ turtle.digDown()
+ turtle.forward()
+elseif turtle.blockname() == "minecraft:pumpkin_stem" then
+  block.name = turtle.inspectDown()
+  turtle.forward()
+elseif turtle.blockname() == "minecraft:air" then
+  block.name = turtle.inspectDown()
+  turtle.digDown()
+ turtle.forward()
+ 
+ end
+end
+RAW Paste Data
