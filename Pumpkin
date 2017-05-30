@@ -1,3 +1,4 @@
+--this is the function to inspect
 local success, block = turtle.inspectDown()
 function turtle.blockname()
   success, block = turtle.inspectDown()
@@ -7,24 +8,26 @@ function turtle.blockname()
    return block.name
   end
 end
- 
+--this is the first moves before it runs the main program
  turtle.up()
  turtle.forward()
- 
-for x = 1,21 do
-if turtle.blockname() == "minecraft:pumpkin" then
- block.name = turtle.inspectDown()
+--this is the program for it to inspect and then run the program
+for a = 1,21 do
+--this inspects Pumpkins
+if block.name == "minecraft:pumpkin" then
+  block.name = turtle.inspectDown()
  turtle.digDown()
  turtle.digDown()
  turtle.forward()
-elseif turtle.blockname() == "minecraft:pumpkin_stem" then
+--this inspects Pumpkin Stems
+elseif block.name == "minecraft:pumpkin_stem" then
   block.name = turtle.inspectDown()
   turtle.forward()
-elseif turtle.blockname() == "minecraft:air" then
+--this inspects air
+elseif block.name == "minecraft:air" then
   block.name = turtle.inspectDown()
   turtle.digDown()
  turtle.forward()
  
  end
 end
-RAW Paste Data
