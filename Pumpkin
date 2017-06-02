@@ -15,17 +15,17 @@ end
 for a = 1,21 do
 --this inspects Pumpkins
 if block.name == "minecraft:pumpkin" then
-  block.name = turtle.inspectDown()
+  success, block = turtle.inspectDown()
  turtle.digDown()
  turtle.digDown()
  turtle.forward()
 --this inspects Pumpkin Stems
 elseif block.name == "minecraft:pumpkin_stem" then
-  block.name = turtle.inspectDown()
+   success, block = turtle.inspectDown()
   turtle.forward()
 --this inspects air
 elseif block.name == "minecraft:air" then
-  block.name = turtle.inspectDown()
+ success, block = turtle.inspectDown()
   turtle.digDown()
  turtle.forward()
  
