@@ -1,33 +1,26 @@
 --this is the function to inspect
 local success, block = turtle.inspectDown()
-function turtle.blockname()
-  success, block = turtle.inspectDown()
-  if block.name == nil then
-   return "nothing here"
-  else
-   return block.name
-  end
-end
+
 --this is the first moves before it runs the main program
- turtle.up()
- turtle.forward()
+turtle.up()
+turtle.forward()
+success, block = turtle.inspectDown()
 --this is the program for it to inspect and then run the program
 for a = 1,21 do
---this inspects Pumpkins
-if block.name == "minecraft:pumpkin" then
-  success, block = turtle.inspectDown()
- turtle.digDown()
- turtle.digDown()
- turtle.forward()
---this inspects Pumpkin Stems
-elseif block.name == "minecraft:pumpkin_stem" then
-   success, block = turtle.inspectDown()
-  turtle.forward()
---this inspects air
-elseif block.name == "minecraft:air" then
- success, block = turtle.inspectDown()
-  turtle.digDown()
- turtle.forward()
- 
- end
+  --this inspects Pumpkins
+  if block.name == "minecraft:pumpkin" then
+    turtle.digDown()
+    turtle.digDown() --this is to till the earth!
+    turtle.forward()
+    success, block = turtle.inspectDown()
+  --this inspects Pumpkin Stems
+  elseif block.name == "minecraft:pumpkin_stem" then
+    turtle.forward()
+    success, block = turtle.inspectDown()
+  --this inspects air
+  else
+    turtle.digDown()
+    turtle.forward()
+    success, block = turtle.inspectDown()
+  end
 end
